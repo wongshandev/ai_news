@@ -13,7 +13,7 @@
 - **自动抓取** — 定时抓取 GitHub Trending 多语言热门项目
 - **数据补充** — 通过 GitHub API 获取项目详细信息（协议、标签、README）
 - **AI 解读** — 调用 DeepSeek AI 对每个项目进行深度分析
-- **报告推送** — 每次运行将**完整 Markdown 周报**提交到本仓库 [`reports/weekly/`](reports/weekly/)（文件名 `YYYY-MM-DD.md`），并更新下方「最新报告」索引表
+- **报告推送** — 每次运行将**完整 Markdown 周报**提交到本仓库 [`reports/weekly/`](reports/weekly/)（文件名 `YYYY-MM-DD.md`），并更新下方「最新报告」索引表；正文结构为：**本周一览表 → 导读 Top3 → 各项目卡片 → AI 解读**
 - **邮件通知** — 同步发送邮件周报
 
 ## 追踪语言
