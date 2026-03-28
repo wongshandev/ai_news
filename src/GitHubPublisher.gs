@@ -5,12 +5,13 @@
 function pushReportToGitHub(report) {
   var token = getApiKey('GITHUB_TOKEN');
   if (!token) {
-    Logger.log('未配置 GITHUB_TOKEN，跳过 GitHub 推送');
+    Logger.log('未配置 GITHUB_TOKEN，跳过将 Markdown 推送到 GitHub');
     return null;
   }
 
   var date = formatDate();
   var path = 'reports/weekly/' + date + '.md';
+  Logger.log('正在上传 Markdown 到 GitHub: ' + path + '（仓库 ' + CONFIG.githubRepo + '）');
   var repo = CONFIG.githubRepo;
 
   var content = Utilities.base64Encode(report, Utilities.Charset.UTF_8);

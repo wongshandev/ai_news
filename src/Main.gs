@@ -19,7 +19,12 @@ function run() {
     var report = generateReport(enrichedRepos, analysis);
     Logger.log('Markdown 报告生成完成，长度: ' + report.length);
 
-    pushReportToGitHub(report);
+    var ghMdUrl = pushReportToGitHub(report);
+    if (ghMdUrl) {
+      Logger.log('Markdown 文件已推送到 GitHub 仓库: ' + CONFIG.githubRepo + ' → ' + ghMdUrl);
+    } else {
+      Logger.log('GitHub Markdown 未推送（请检查 Script Properties 中的 GITHUB_TOKEN 及仓库权限）');
+    }
     saveToGoogleDrive(report);
     sendEmailNotification(report);
 
